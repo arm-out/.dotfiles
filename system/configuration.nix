@@ -70,6 +70,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -81,6 +82,11 @@
   # };
 
   # List services that you want to enable:
+
+  # Enable Hyprland
+  programs.hyprland.enable = true;
+  # Hint Electron apps to use Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
