@@ -78,6 +78,17 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      corefonts			# MS
+      font-awesome		# Icons
+      noto-fonts		# Google fonts
+      noto-fonts-emoji
+      nerd-fonts.fira-code
+    ];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -95,6 +106,15 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # GC and Store optimizations
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 7d";
+  };
+
+  nix.optimise.automatic = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
