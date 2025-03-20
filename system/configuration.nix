@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, systemSettings, userSettings, ... }:
 
 {
   imports =
@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -25,21 +25,21 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Australia/Melbourne";
+  time.timeZone = systemSettings.timezone;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
+  i18n.defaultLocale = systemSettings.locale;
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
+    LC_ADDRESS = systemSettings.locale;
+    LC_IDENTIFICATION = systemSettings.locale;
+    LC_MEASUREMENT = systemSettings.locale;
+    LC_MONETARY = systemSettings.locale;
+    LC_NAME = systemSettings.locale;
+    LC_NUMERIC = systemSettings.locale;
+    LC_PAPER = systemSettings.locale;
+    LC_TELEPHONE = systemSettings.locale;
+    LC_TIME = systemSettings.locale;
   };
 
   # Configure keymap in X11
@@ -51,7 +51,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.armout = {
     isNormalUser = true;
-    description = "Armin";
+    description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -59,7 +59,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "armout";
+  services.getty.autologinUser = userSettings.username;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
