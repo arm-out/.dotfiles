@@ -10,10 +10,13 @@
     ".config/waybar/colors.css".source = ./colors.css;
     ".config/waybar/style.css".source = ./style.css;
     ".config/waybar/wittr.sh".source = ./wittr.sh;
+
+    # Fuzzel Config
+    ".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
   };
 
   home.packages = with pkgs; [
-    wofi
+    fuzzel
     waybar
   ];
 
