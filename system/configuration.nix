@@ -108,6 +108,8 @@
   # };
 
   # List services that you want to enable:
+  
+  programs.dconf.enable = true;		# For Easy Effects
 
   # Enable Hyprland
   programs.hyprland.enable = true;
