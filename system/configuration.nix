@@ -26,6 +26,16 @@
 
   # Set your time zone.
   time.timeZone = systemSettings.timezone;
+ 
+  # Enable bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+   # settings = {
+   #   General = { ControllerMode = "bredr"; };
+   # };
+  };
+  services.blueman.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale;
