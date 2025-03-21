@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, userSettings, ... }:
 
 {
   home.file = {
@@ -18,6 +18,16 @@
   home.packages = with pkgs; [
     fuzzel
     waybar
+    hyprpaper
   ];
+
+  # Wallpaper
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [ (userSettings.dotfilesDir + "/programs/desktop/wallpaper.png") ];
+      wallpaper = [ ("," + userSettings.dotfilesDir + "/programs/desktop/wallpaper.png") ];
+   };
+  };
 
 }
