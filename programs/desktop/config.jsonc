@@ -6,7 +6,7 @@
     "spacing": 1,
     "modules-left": [
         "hyprland/workspaces",
-        "tray",
+        "tray"
         //"mpris"
     ],
     "modules-center": [
