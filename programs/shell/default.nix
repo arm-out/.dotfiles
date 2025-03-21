@@ -10,6 +10,7 @@
     r = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     gc = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
     opt = "nix-store --optimise";
+    dot = "cd ~/.dotfiles";
     ".." = "cd ..";
   };
 }
