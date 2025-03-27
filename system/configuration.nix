@@ -119,6 +119,24 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Keyboard remapping
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "`";
+          };
+        };
+        extraConfig = ''
+        '';
+      };
+    };
+  };
+
   # GC and Store optimizations
   nix.gc = {
     automatic = true;
