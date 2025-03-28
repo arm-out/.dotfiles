@@ -1,5 +1,8 @@
 -- keymaps and non-plugin config
-require('armout.keymap')
+require('armout.opts')
 
 -- material theme
 require('armout.theme')
+
+-- plugins
+require('armout.plugins')
