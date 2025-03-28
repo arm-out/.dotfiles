@@ -18,9 +18,9 @@ in {
       ];
       # see the packageDefinitions below.
       # This says which of those to install.
-      packageNames = [ "myHomeModuleNvim" ];
+      packageNames = [ "armoutNvim" ];
 
-      luaPath = ./.;
+      luaPath = "${./.}";
 
       # the .replace vs .merge options are for modules based on existing configurations,
       # they refer to how multiple categoryDefinitions get merged together by the module.
@@ -37,24 +37,6 @@ in {
         # this includes LSPs
         lspsAndRuntimeDeps = {
           general = with pkgs; [
-            lazygit
-          ];
-          lua = with pkgs; [
-            lua-language-server
-            stylua
-          ];
-          nix = with pkgs; [
-            nixd
-            alejandra
-          ];
-          go = with pkgs; [
-            gopls
-            delve
-            golint
-            golangci-lint
-            gotools
-            go-tools
-            go
           ];
         };
 
@@ -65,37 +47,12 @@ in {
             # but as a demo, we do it anyway.
             lze
             lzextras
-            snacks-nvim
-            onedark-nvim
-            vim-sleuth
           ];
         };
 
         # not loaded automatically at startup.
         # use with packadd and an autocommand in config to achieve lazy loading
         optionalPlugins = {
-          go = with pkgs.vimPlugins; [
-            nvim-dap-go
-          ];
-          lua = with pkgs.vimPlugins; [
-            lazydev-nvim
-          ];
-          general = with pkgs.vimPlugins; [
-            mini-nvim
-            nvim-lspconfig
-            vim-startuptime
-            blink-cmp
-            nvim-treesitter.withAllGrammars
-            lualine-nvim
-            lualine-lsp-progress
-            gitsigns-nvim
-            which-key-nvim
-            nvim-lint
-            conform-nvim
-            nvim-dap
-            nvim-dap-ui
-            nvim-dap-virtual-text
-          ];
         };
 
         # shared libraries to be added to LD_LIBRARY_PATH
@@ -132,7 +89,7 @@ in {
       packageDefinitions.replace = {
         # These are the names of your packages
         # you can include as many as you wish.
-        myHomeModuleNvim = {pkgs , ... }: {
+        armoutNvim = {pkgs , ... }: {
           # they contain a settings set defined above
           # see :help nixCats.flake.outputs.settings
           settings = {
@@ -140,17 +97,13 @@ in {
             # unwrappedCfgPath = "/path/to/here";
             # IMPORTANT:
             # your alias may not conflict with your other packages.
-            aliases = [ "vim" "homeVim" ];
+            aliases = [ "vim" ];
             # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
           };
           # and a set of categories that you want
           # (and other information to pass to lua)
           # and a set of categories that you want
           categories = {
-            general = true;
-            lua = true;
-            nix = true;
-            go = false;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {
