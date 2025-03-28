@@ -4,6 +4,7 @@
   imports = [
     ./desktop
     ./shell
+    ./nvim
     ./services.nix
   ];
 

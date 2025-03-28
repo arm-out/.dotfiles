@@ -8,7 +8,7 @@
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
 
-  outputs = {self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{self, nixpkgs, home-manager, ... }:
     let
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
@@ -37,10 +37,15 @@
              home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
              home-manager.backupFileExtension = "backup";
-             home-manager.users.armout = ./home.nix;
+             home-manager.users.armout = {
+               imports = [
+                 ./home.nix
+               ];
+             };
              home-manager.extraSpecialArgs = {
                inherit systemSettings;
                inherit userSettings;
+               inherit inputs;
              };
            }
 
