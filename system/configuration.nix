@@ -119,6 +119,22 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # OpenGL and Video Drivers
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
   # Keyboard remapping
   services.keyd = {
     enable = true;

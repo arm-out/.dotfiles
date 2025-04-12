@@ -6,6 +6,13 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    # nvim packages
+    "material.nvim" = {
+      url = "github:marko-cerovac/material.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{self, nixpkgs, home-manager, ... }:
@@ -37,11 +44,7 @@
              home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
              home-manager.backupFileExtension = "backup";
-             home-manager.users.armout = {
-               imports = [
-                 ./home.nix
-               ];
-             };
+             home-manager.users.armout = ./home.nix;
              home-manager.extraSpecialArgs = {
                inherit systemSettings;
                inherit userSettings;

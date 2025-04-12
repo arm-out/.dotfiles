@@ -3,7 +3,6 @@
 {
   imports = [
     ./programs
-    ./nvim
   ];
 
   home.username = userSettings.username;
@@ -24,6 +23,7 @@
 
   home.sessionVariables = {
     GTK_THEME = "Dracula";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
   home.stateVersion = "24.11";
