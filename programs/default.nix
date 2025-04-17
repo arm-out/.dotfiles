@@ -20,9 +20,7 @@
   in
   {
     enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblock
-    ];
+    enabledExtensions = with spicePkgs.extensions; [ adblock ];
   };
 
 }
