@@ -81,6 +81,7 @@
     wget
     git
     firefox
+    hypridle
   ];
 
   # Default shell
