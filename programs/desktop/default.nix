@@ -6,19 +6,32 @@
     ".config/hypr/hyprland.conf".source = ./hyprland.conf;
 
     # Waybar Config
-    ".config/waybar/config.jsonc".source = ./config.jsonc;
-    ".config/waybar/colors.css".source = ./colors.css;
-    ".config/waybar/style.css".source = ./style.css;
-    ".config/waybar/wittr.sh".source = ./wittr.sh;
+    ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+    ".config/waybar/colors.css".source = ./waybar/colors.css;
+    ".config/waybar/style.css".source = ./waybar/style.css;
+    ".config/waybar/wittr.sh".source = ./waybar/wittr.sh;
 
     # Fuzzel Config
     ".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
+
+    # Hyprcursor
+    ".icons/hyprmacOS" = {
+      source = ./cursor/hyprcursor/macOS;
+      recursive = true;
+    };
+    
+    # Xcursor
+    ".icons/macOS" = {
+      source = ./cursor/xcursor/macOS;
+      recursive = true;
+    };
   };
 
   home.packages = with pkgs; [
     fuzzel
     waybar
     hyprpaper
+    hyprcursor
   ];
 
   # Wallpaper
