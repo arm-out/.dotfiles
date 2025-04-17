@@ -6,12 +6,12 @@
     "spacing": 1,
     "modules-left": [
         "hyprland/workspaces",
-        "tray"
-        //"mpris"
+        "tray",
+        "mpris"
     ],
-    "modules-center": [
-   	"hyprland/window"
-    ],
+    //"modules-center": [
+   //	"hyprland/window"
+   // ],
     "modules-right": [
     	"idle_inhibitor",
     	"custom/kernel",
@@ -59,7 +59,7 @@
     	"player-icons": {
             "default": "▶",
             "firefox": "▶",
-            "tidal-hifi": "🎵",
+            "spotify": "🎵",
             "cmus": "🎵"
     	},
     	"status-icons": {
