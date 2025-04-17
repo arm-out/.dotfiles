@@ -190,7 +190,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @overlay0;
+    background-color: @mantle;
     color: @text;
 }
 
@@ -200,7 +200,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @mantle;
+    background-color: @overlay0;
 }
 
 #idle_inhibitor {
