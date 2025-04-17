@@ -1,0 +1,25 @@
+palette = 0=#121212
+palette = 1=#9834f6
+palette = 2=#682ef5
+palette = 3=#3a2bf5
+palette = 4=#344ef5
+palette = 5=#4481f7
+palette = 6=#5bb6f9
+palette = 7=#f1f1f1
+palette = 8=#666666
+palette = 9=#ae5ff7
+palette = 10=#885cf6
+palette = 11=#665bf6
+palette = 12=#6277f7
+palette = 13=#6ea0f8
+palette = 14=#78c6fa
+palette = 15=#ffffff
+background = #1a1a1a
+foreground = #f1f1f1
+cursor-color = #c7c7c7
+selection-background = #ffffff
+selection-foreground = #000000
+
+font-family = FiraCode Nerd Font Mono
+
+window-padding-y = 4

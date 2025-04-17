@@ -32,6 +32,7 @@
     waybar
     hyprpaper
     hyprcursor
+    xdg-desktop-portal-hyprland
   ];
 
   # Wallpaper

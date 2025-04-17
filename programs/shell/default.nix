@@ -3,7 +3,12 @@
 {
   home.packages = with pkgs; [
     ghostty
+    starship
   ];
+
+  home.file = {
+    ".config/ghostty/config".source = ./config;
+  };
   
   programs.fish = {
     enable = true;
@@ -14,7 +19,7 @@
       dot = "cd ~/.dotfiles";
       ".." = "cd ..";
     };
-    interactiveShellInit = "set fish_greeting";
+    interactiveShellInit = "set fish_greeting '' & starship init fish | source";
   };
 }
 
