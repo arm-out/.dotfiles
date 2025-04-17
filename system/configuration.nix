@@ -34,9 +34,9 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-   # settings = {
-   #   General = { ControllerMode = "bredr"; };
-   # };
+    settings = {
+      General = { ControllerMode = "bredr"; };
+    };
   };
   services.blueman.enable = true;
 
