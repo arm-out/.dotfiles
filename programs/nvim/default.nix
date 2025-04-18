@@ -15,7 +15,7 @@ in {
       ];
       packageNames = [ "nvim" ];
 
-      luaPath = ./.;
+      luaPath = "${./.}";
 
       categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkNvimPlugin, ... }@packageDef: {
         lspsAndRuntimeDeps = {
