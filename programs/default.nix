@@ -4,7 +4,7 @@
   imports = [
     ./desktop
     ./shell
-    #./nvim
+    ./nvim
     ./services.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];
