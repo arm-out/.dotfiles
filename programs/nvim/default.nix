@@ -46,6 +46,8 @@ in {
 
 		optionalPlugins = {
 		  core = with pkgs.vimPlugins; [
+			neo-tree-nvim
+			nui-nvim
 		  ];
 
 		  theme = with pkgs.vimPlugins; [
