@@ -6,13 +6,18 @@ return {
 	bufferline.setup({
 	  options = {
 		mode = "tabs",
+		themable = true,
 		offsets = {
 		  {
 			filetype = "neo-tree",
-			text = "",
-			separator = false,
+			text = "File Explorer",
+			separator = true,
+			text_align = "left"
 		  },
 		},
+
+		color_icons = true,
+
 	  }
 	})
   end,
