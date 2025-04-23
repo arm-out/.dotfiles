@@ -4,7 +4,7 @@ require("lze").load {
   },
 
   { "nvim-web-devicons",
-    dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim" }
+    dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim", "alpha-nvim" }
   },
   
   { "nui.nvim",
@@ -18,4 +18,5 @@ require("lze").load {
   { import = "armout.plugins.neo-tree" },
   { import = "armout.plugins.which-key" },
   { import = "armout.plugins.telescope" },
+  { import = "armout.plugins.alpha" },
 }

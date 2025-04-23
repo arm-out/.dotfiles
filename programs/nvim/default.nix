@@ -50,6 +50,7 @@ in {
 			neo-tree-nvim
 			nui-nvim
 			which-key-nvim
+			alpha-nvim
 		  ];
 
 		  telescope = with pkgs.vimPlugins; [
