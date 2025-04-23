@@ -20,6 +20,7 @@ in {
       categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkNvimPlugin, ... }@packageDef: {
         lspsAndRuntimeDeps = {
 		  core = with pkgs; [
+			ripgrep
 		  ];
 
           lsp = with pkgs; [
@@ -51,6 +52,12 @@ in {
 			which-key-nvim
 		  ];
 
+		  telescope = with pkgs.vimPlugins; [
+			telescope-nvim
+			telescope-ui-select-nvim
+			telescope-fzf-native-nvim
+		  ];
+
 		  theme = with pkgs.vimPlugins; [
 			lualine-nvim
 			nvim-web-devicons
@@ -67,6 +74,7 @@ in {
           };
           categories = {
 		    core = true;
+			telescope = true;
 			theme = true;
             lsp = true;
 			lint = true;
