@@ -13,4 +13,5 @@ require("lze").load {
 
   { import = "armout.plugins.lualine" },
   { import = "armout.plugins.neo-tree" },
+  { import = "armout.plugins.which-key" },
 }
