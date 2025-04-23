@@ -51,6 +51,8 @@ in {
 			nui-nvim
 			which-key-nvim
 			alpha-nvim
+			auto-session
+			bufferline-nvim
 		  ];
 
 		  telescope = with pkgs.vimPlugins; [

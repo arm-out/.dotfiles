@@ -17,6 +17,8 @@ require("lze").load {
   { import = "armout.plugins.lualine" },
   { import = "armout.plugins.neo-tree" },
   { import = "armout.plugins.which-key" },
-  { import = "armout.plugins.telescope" },
+  { import = "armout.plugins.auto-session" },
   { import = "armout.plugins.alpha" },
+  { import = "armout.plugins.bufferline" },
+  { import = "armout.plugins.telescope" },
 }
