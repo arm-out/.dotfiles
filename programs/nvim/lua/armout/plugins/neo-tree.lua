@@ -13,7 +13,7 @@ return {
 		width = 30
 	  },
 	  close_if_last_window = true,
-	
+	  use_popups_for_input = false,	
 	})
   end
 }

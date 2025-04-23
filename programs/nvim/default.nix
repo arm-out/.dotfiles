@@ -53,6 +53,7 @@ in {
 			alpha-nvim
 			auto-session
 			bufferline-nvim
+			snacks-nvim
 		  ];
 
 		  telescope = with pkgs.vimPlugins; [
