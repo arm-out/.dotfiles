@@ -1,1 +1,1 @@
-require("armout.core")
+require("armout")

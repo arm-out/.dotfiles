@@ -19,21 +19,40 @@ in {
 
       categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkNvimPlugin, ... }@packageDef: {
         lspsAndRuntimeDeps = {
+		  core = with pkgs; [
+		  ];
+
           lsp = with pkgs; [
           ];
+
+		  lint = with pkgs; [
+		  ];
+
+		  format = with pkgs; [
+		  ];
         };
 
         startupPlugins = {
           core = with pkgs.vimPlugins; [
             lze
             lzextras
-	    (mkNvimPlugin inputs."material.nvim" "material")
+			plenary-nvim
           ];
+
+		  theme = with pkgs.vimPlugins; [
+	  	    (mkNvimPlugin inputs."material.nvim" "material")
+		  ];
         };
 
-	optionalPlugins = {
-	
-	};
+		optionalPlugins = {
+		  core = with pkgs.vimPlugins; [
+		  ];
+
+		  theme = with pkgs.vimPlugins; [
+			lualine-nvim
+			nvim-web-devicons
+		  ];
+		};
 
       });
 
@@ -44,10 +63,12 @@ in {
             aliases = [ "vim" ];
           };
           categories = {
-	    core = true;
+		    core = true;
+			theme = true;
             lsp = true;
+			lint = true;
+			format = true;
           };
-          # anything else to pass and grab in lua with `nixCats.extra`
           extra = {
             nixdExtras.nixpkgs = ''import ${pkgs.path} {}'';
           };

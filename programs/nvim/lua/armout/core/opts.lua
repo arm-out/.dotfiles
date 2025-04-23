@@ -14,6 +14,8 @@ set.autoindent = true
 
 set.wrap = false
 
+set.cursorline = true
+
 -- search settings
 set.ignorecase = true
 set.smartcase = true
