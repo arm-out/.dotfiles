@@ -54,6 +54,8 @@ in {
 			auto-session
 			bufferline-nvim
 			snacks-nvim
+			nvim-treesitter.withAllGrammars
+			nvim-ts-autotag
 		  ];
 
 		  telescope = with pkgs.vimPlugins; [

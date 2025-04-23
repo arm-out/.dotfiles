@@ -11,6 +11,10 @@ require("lze").load {
 	dep_of = { "neo-tree.nvim" }
   },
   
+  { "nvim-ts-autotag",
+	dep_of = { "nvim-treesitter" }
+  },
+
   { "telescope-fzf-native.nvim" },
   { "telescope-ui-select.nvim" },
 
@@ -22,4 +26,5 @@ require("lze").load {
   { import = "armout.plugins.alpha" },
   { import = "armout.plugins.bufferline" },
   { import = "armout.plugins.telescope" },
+  { import = "armout.plugins.treesitter" },
 }
