@@ -24,6 +24,7 @@ in {
 		  ];
 
           lsp = with pkgs; [
+			lua-language-server
           ];
 
 		  lint = with pkgs; [
@@ -56,12 +57,24 @@ in {
 			snacks-nvim
 			nvim-treesitter.withAllGrammars
 			nvim-ts-autotag
+			nvim-autopairs
+			nvim-ts-context-commentstring
+			comment-nvim
+			nvim-lspconfig
+			lazydev-nvim
 		  ];
 
 		  telescope = with pkgs.vimPlugins; [
 			telescope-nvim
 			telescope-ui-select-nvim
 			telescope-fzf-native-nvim
+		  ];
+
+		  cmp = with pkgs.vimPlugins; [
+			blink-cmp
+			luasnip
+			friendly-snippets
+			colorful-menu-nvim
 		  ];
 
 		  theme = with pkgs.vimPlugins; [
@@ -81,6 +94,7 @@ in {
           categories = {
 		    core = true;
 			telescope = true;
+			cmp = true;
 			theme = true;
             lsp = true;
 			lint = true;

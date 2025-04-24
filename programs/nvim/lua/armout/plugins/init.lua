@@ -18,13 +18,16 @@ require("lze").load {
   { "telescope-fzf-native.nvim" },
   { "telescope-ui-select.nvim" },
 
+  { import = "armout.plugins.blink-cmp" },
   { import = "armout.plugins.snacks" },
   { import = "armout.plugins.lualine" },
   { import = "armout.plugins.neo-tree" },
   { import = "armout.plugins.which-key" },
   { import = "armout.plugins.auto-session" },
   { import = "armout.plugins.alpha" },
+  { import = "armout.plugins.autopairs" },
   { import = "armout.plugins.bufferline" },
-  { import = "armout.plugins.telescope" },
   { import = "armout.plugins.treesitter" },
+  { import = "armout.plugins.lsp" },
+  { import = "armout.plugins.telescope" },
 }
