@@ -9,6 +9,9 @@ require("material").setup({
 
   plugins = {
 	"nvim-web-devicons",
+	"neo-tree",
+	"telescope",
+	"which-key",
   },
 
   lualine_style = "stealth",
