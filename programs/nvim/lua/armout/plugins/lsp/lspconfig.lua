@@ -29,6 +29,31 @@ return {
 		},
 		capabilities = capabilities,
 	  })
+
+	  lspconfig['nixd'].setup({
+		filetypes = { 'nix' },
+		settings = {
+		  nixd = {
+			nixpkgs = {
+			  expr = nixCats.extra("nixdExtras.nixpkgs") or [[import >nixpkgs> {}]],
+			},
+			options = {
+			  nixos = {
+				expr = nixCats.extra("nixdExtras.nixos_options")
+			  }
+			},
+			formatting = {
+			  command = { "nixfmt" }
+			},
+			diagnostics = {
+			  surpress = {
+				"sema-escaping-with"
+			  }
+			}
+		  }
+		}
+	  })
+
 	end
   },
   {
@@ -47,4 +72,8 @@ return {
     "lua_ls",
 	dep_of = { "nvim-lspconfig" },
   },
+  {
+	"nixd",
+	dep_of = { "nvim-lspconfig" }
+  }
 }
