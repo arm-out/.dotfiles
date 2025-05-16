@@ -18,7 +18,12 @@ in {
           lspsAndRuntimeDeps = {
             core = with pkgs; [ ripgrep ];
 
-            lsp = with pkgs; [ lua-language-server nixd ];
+            lsp = with pkgs; [
+              lua-language-server
+              nixd
+              svelte-language-server
+              typescript-language-server
+            ];
 
             lint = with pkgs; [ eslint_d pylint ];
 
@@ -50,6 +55,11 @@ in {
               lazydev-nvim
               conform-nvim
               nvim-lint
+              trouble-nvim
+              todo-comments-nvim
+              nvim-surround
+              comment-nvim
+              nvim-ts-context-commentstring
             ];
 
             telescope = with pkgs.vimPlugins; [
@@ -63,7 +73,7 @@ in {
               luasnip
               friendly-snippets
               colorful-menu-nvim
-			  copilot-vim
+              copilot-vim
             ];
 
             theme = with pkgs.vimPlugins; [ lualine-nvim nvim-web-devicons ];

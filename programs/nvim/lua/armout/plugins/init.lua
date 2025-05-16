@@ -1,7 +1,7 @@
 require("lze").load({
-  { "plenary.nvim", dep_of = { "neo-tree.nvim", "telescope.nvim" } },
+  { "plenary.nvim", dep_of = { "neo-tree.nvim", "telescope.nvim", "todo-comments.nvim" } },
 
-  { "nvim-web-devicons", dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim", "alpha-nvim" } },
+  { "nvim-web-devicons", dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim", "alpha-nvim", "trouble.nvim" } },
 
   { "nui.nvim", dep_of = { "neo-tree.nvim" } },
 
@@ -10,6 +10,10 @@ require("lze").load({
   { "telescope-fzf-native.nvim" },
   { "telescope-ui-select.nvim" },
 
+  { import = "armout.plugins.todo-comments" },
+  { import = "armout.plugins.surround" },
+  -- { import = "armout.plugins.comment" },
+  { import = "armout.plugins.trouble" },
   { import = "armout.plugins.blink-cmp" },
   { import = "armout.plugins.formatting" },
   { import = "armout.plugins.linting" },
