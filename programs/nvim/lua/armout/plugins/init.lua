@@ -1,25 +1,19 @@
-require("lze").load {
-  { "plenary.nvim",
-    dep_of = { "neo-tree.nvim", "telescope.nvim" }
-  },
+require("lze").load({
+  { "plenary.nvim", dep_of = { "neo-tree.nvim", "telescope.nvim" } },
 
-  { "nvim-web-devicons",
-    dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim", "alpha-nvim" }
-  },
- 
-  { "nui.nvim",
-	dep_of = { "neo-tree.nvim" }
-  },
-  
-  { "nvim-ts-autotag",
-	dep_of = { "nvim-treesitter" }
-  },
+  { "nvim-web-devicons", dep_of = { "lualine", "neo-tree.nvim", "telescope.nvim", "alpha-nvim" } },
+
+  { "nui.nvim", dep_of = { "neo-tree.nvim" } },
+
+  { "nvim-ts-autotag", dep_of = { "nvim-treesitter" } },
 
   { "telescope-fzf-native.nvim" },
   { "telescope-ui-select.nvim" },
 
   { import = "armout.plugins.blink-cmp" },
   { import = "armout.plugins.formatting" },
+  { import = "armout.plugins.linting" },
+  { import = "armout.plugins.copilot" },
   { import = "armout.plugins.snacks" },
   { import = "armout.plugins.lualine" },
   { import = "armout.plugins.neo-tree" },
@@ -31,4 +25,4 @@ require("lze").load {
   { import = "armout.plugins.treesitter" },
   { import = "armout.plugins.lsp" },
   { import = "armout.plugins.telescope" },
-}
+})
