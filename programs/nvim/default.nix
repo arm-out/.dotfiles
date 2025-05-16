@@ -20,7 +20,7 @@ in {
 
             lsp = with pkgs; [ lua-language-server nixd ];
 
-            lint = with pkgs; [ ];
+            lint = with pkgs; [ eslint_d pylint ];
 
             format = with pkgs; [ nixfmt stylua isort black prettierd ];
           };
@@ -49,6 +49,7 @@ in {
               nvim-lspconfig
               lazydev-nvim
               conform-nvim
+              nvim-lint
             ];
 
             telescope = with pkgs.vimPlugins; [
