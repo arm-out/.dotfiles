@@ -22,7 +22,7 @@ in {
 
             lint = with pkgs; [ ];
 
-            format = with pkgs; [ nixfmt ];
+            format = with pkgs; [ nixfmt stylua isort black prettierd ];
           };
 
           startupPlugins = {
@@ -48,6 +48,7 @@ in {
               comment-nvim
               nvim-lspconfig
               lazydev-nvim
+              conform-nvim
             ];
 
             telescope = with pkgs.vimPlugins; [

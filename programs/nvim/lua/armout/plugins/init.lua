@@ -19,6 +19,7 @@ require("lze").load {
   { "telescope-ui-select.nvim" },
 
   { import = "armout.plugins.blink-cmp" },
+  { import = "armout.plugins.formatting" },
   { import = "armout.plugins.snacks" },
   { import = "armout.plugins.lualine" },
   { import = "armout.plugins.neo-tree" },

@@ -47,30 +47,18 @@ return {
 
 					opts.desc = "Restart LSP"
 					keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
-					opts.desc = "Format Buffer"
-					keymap.set("n", "<C-s>", vim.lsp.buf.format, opts) -- quick format
-				end
+				end,
 			})
 
-			lspconfig['lua_ls'].setup({
-				filetypes = { 'lua' },
+			lspconfig["lua_ls"].setup({
+				filetypes = { "lua" },
 				settings = {
 					Lua = {
-						runtime = { version = 'LuaJIT' },
-						formatters = {
-							ignoreComments = true,
-						},
-						format = {
-						  enable = true,
-						  defaultConfig = {
-							indent_size = "2",
-						  }
-						},
+						runtime = { version = "LuaJIT" },
 						signatureHelp = { enabled = true },
 						diagnostics = {
-							globals = { "nixCats", "vim", },
-							disable = { 'missing-fields' },
+							globals = { "nixCats", "vim" },
+							disable = { "missing-fields" },
 						},
 						telemetry = { enabled = false },
 					},
@@ -78,8 +66,8 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig['nixd'].setup({
-				filetypes = { 'nix' },
+			lspconfig["nixd"].setup({
+				filetypes = { "nix" },
 				settings = {
 					nixd = {
 						nixpkgs = {
@@ -87,34 +75,30 @@ return {
 						},
 						options = {
 							nixos = {
-								expr = nixCats.extra("nixdExtras.nixos_options")
-							}
+								expr = nixCats.extra("nixdExtras.nixos_options"),
+							},
 						},
 						formatting = {
-							command = { "nixfmt" }
+							command = { "nixfmt" },
 						},
 						diagnostics = {
 							surpress = {
-								"sema-escaping-with"
-							}
-						}
-					}
-				}
+								"sema-escaping-with",
+							},
+						},
+					},
+				},
 			})
-
-			vim.lsp.config('*', {
-				on_attach = require('armout.plugins.lsp.onAttach'),
-			})
-		end
+		end,
 	},
 	{
 		"lazydev.nvim",
 		cmd = { "LazyDev" },
 		ft = "lua",
 		after = function(_)
-			require('lazydev').setup({
+			require("lazydev").setup({
 				library = {
-					{ words = { "nixCats" }, path = (nixCats.nixCatsPath or "") .. '/lua' },
+					{ words = { "nixCats" }, path = (nixCats.nixCatsPath or "") .. "/lua" },
 				},
 			})
 		end,
@@ -125,6 +109,6 @@ return {
 	},
 	{
 		"nixd",
-		dep_of = { "nvim-lspconfig" }
-	}
+		dep_of = { "nvim-lspconfig" },
+	},
 }
